@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import {SafeAreaView,KeyboardAvoidingView, TextInput, StyleSheet, Text, View, Button, ScrollView } from 'react-native';
+import Input from './Input'
 export default function App() {
   [Id, setId] = useState(null);
   [ExamId, setExamId] = useState(null);
@@ -21,18 +22,9 @@ export default function App() {
     </View>
     <View style={styles.FormContainer}>
       <Text style={styles.centeredText}>Please Insert Your ID number, the Exam ID and the Station ID</Text>
-      <View style={styles.inputRow}>
-      <TextInput style={styles.input} onChangeText={(input)=>{console.log(input); setId(input)}} value={Id} placeholder="Your ID" keyboardType="decimal-pad"></TextInput>
-        <Text style={styles.label}>ID:</Text>
-      </View>
-      <View style={styles.inputRow}>
-      <TextInput style={styles.input}  onChangeText={(input)=>{console.log(input);setExamId(input)}} value={ExamId} placeholder="Exam ID" keyboardType="decimal-pad"></TextInput>
-      <Text style={styles.label}>ExamID:</Text>
-      </View>
-      <View style={styles.inputRow}>
-      <TextInput style={styles.input}  onChangeText={(input)=>{ console.log(input); setStationId(input)}} value={StationId} placeholder="Station ID" keyboardType="decimal-pad"></TextInput>
-      <Text style={styles.label}>Station ID:</Text>
-      </View>
+      <Input placeholder="Your ID" getVal={Id} setVal={(input)=>{setId(input)}} keyboardType="decimal-pad" Label="ID:"/>
+      <Input placeholder="Exam ID" getVal={ExamId} setVal={(input)=>{setExamId(input)}} keyboardType="decimal-pad" Label="ID:"/>
+      <Input placeholder="Station ID" getVal={StationId} setVal={(input)=>{setStationId(input)}} keyboardType="decimal-pad" Label="ID:"/>
       <Button title="Generate Code!" onPress={CodeGeneratorHandler}></Button>
     </View>
     {AuthCode&&
