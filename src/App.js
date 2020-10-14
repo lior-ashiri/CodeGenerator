@@ -44,27 +44,11 @@ const styles = StyleSheet.create({
   Title:{
     color: "blue", fontWeight: 'bold', textDecorationLine: 'underline', textAlign: "center"
   },
-  label:{
-    marginHorizontal: 10
-  },
-  inputRow:{
-    flex:1,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: 'center',
-    
-  },
   centeredText:{
     textAlign: 'center',
     fontWeight: 'bold',
   },
-  input: {
-    paddingHorizontal: 2,
-    paddingVertical: 5,
-    borderBottomColor: '#ccc',
-    borderBottomWidth: 1,
-    width: 90
-  },
+  
   CodeResultContainer:{
     flex:1,
     backgroundColor: '#eee',
